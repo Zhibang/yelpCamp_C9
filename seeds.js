@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+//var mongoose = require("mongoose");
 var Campground = require("./models/campground");
 var Comment   = require("./models/comment");
 
@@ -28,7 +28,7 @@ function seedDB(){
         }
         console.log("removed campgrounds!");
          //add a few campgrounds
-        data.forEach(function(seed){
+        /*.forEach(function(seed){
             Campground.create(seed, function(err, campground){
                 if(err){
                     console.log(err)
@@ -50,9 +50,15 @@ function seedDB(){
                         });
                 }
             });
-        });
+        });*/
     }); 
     //add a few comments
+    Comment.remove({}, function(err){
+        if(err){
+            console.log(err);
+        }
+        console.log("removed campgrounds!");
+    });
 }
 
 module.exports = seedDB;
