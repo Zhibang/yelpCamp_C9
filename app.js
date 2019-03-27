@@ -17,9 +17,7 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index")
     
-//mongoose.connect("mongodb://localhost/yelp_camp_v10");
-//mongoose.connect("mongodb://cchen:cc1234@ds115022.mlab.com:15022/firstyelpcamp");
-//remember to use "export DATABASEURL=mongodb://localhost/yelp_camp_v10" in the CLI first
+
 mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
